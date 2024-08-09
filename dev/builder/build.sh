@@ -33,23 +33,23 @@ cd $(dirname $0)
 
 # Download/update ckbuilder.jar.
 mkdir -p ckbuilder/$CKBUILDER_VERSION
-cd ckbuilder/$CKBUILDER_VERSION
-if [ -f ckbuilder.jar ]; then
-	echo "Checking/Updating CKBuilder..."
-	if command_exists curl ; then
-	curl -O -R -z ckbuilder.jar $CKBUILDER_URL || echo "$MSG_UPDATE_FAILED"
-	else
-	wget -N $CKBUILDER_URL || echo "$MSG_UPDATE_FAILED"
-	fi
-else
-	echo "Downloading CKBuilder..."
-	if command_exists curl ; then
-	curl -O -R $CKBUILDER_URL || error_exit "$MSG_DOWNLOAD_FAILED"
-	else
-	wget -N $CKBUILDER_URL || error_exit "$MSG_DOWNLOAD_FAILED"
-	fi
-fi
-cd ../..
+# cd ckbuilder/$CKBUILDER_VERSION
+# if [ -f ckbuilder.jar ]; then
+# 	echo "Checking/Updating CKBuilder..."
+# 	if command_exists curl ; then
+# 	curl -O -R -z ckbuilder.jar $CKBUILDER_URL || echo "$MSG_UPDATE_FAILED"
+# 	else
+# 	wget -N $CKBUILDER_URL || echo "$MSG_UPDATE_FAILED"
+# 	fi
+# else
+# 	echo "Downloading CKBuilder..."
+# 	if command_exists curl ; then
+# 	curl -O -R $CKBUILDER_URL || error_exit "$MSG_DOWNLOAD_FAILED"
+# 	else
+# 	wget -N $CKBUILDER_URL || error_exit "$MSG_DOWNLOAD_FAILED"
+# 	fi
+# fi
+# cd ../..
 
 # Run the builder.
 echo ""
